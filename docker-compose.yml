@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  ts_semantic_cache:
+    build: .
+    ports:
+      - '3000:3000'
+    container_name: ts_semantic_cache
+    expose:
+      - 3000
+    depends_on:
+      - redis
+  redis:
+    image: 'redis:alpine'
+    ports:
+      - '6379:6379'

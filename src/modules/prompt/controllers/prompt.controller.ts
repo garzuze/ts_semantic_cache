@@ -1,10 +1,11 @@
 import type { Request, Response } from 'express';
+import api from '../../../shared/services/api';
 import { SemanticCacheService } from '../../semantic_cache/services/core/semantic-cache.service';
 import { PromptResponse } from '../interfaces/prompt-response.interface';
 import { DeepSeekPromptService } from '../services/deepseek-prompt.service';
 
 const semanticCache = new SemanticCacheService();
-const promptService = new DeepSeekPromptService(semanticCache);
+const promptService = new DeepSeekPromptService(api, semanticCache);
 
 export const createPrompt = async (
   req: Request,

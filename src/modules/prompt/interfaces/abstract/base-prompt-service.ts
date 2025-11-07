@@ -1,10 +1,14 @@
+import { AxiosInstance } from 'axios';
 import { embeddingService } from '../../../../shared/utils/constants';
 import { SemanticCacheService } from '../../../semantic_cache/services/core/semantic-cache.service';
 import { IPromptService } from '../prompt.service.interface';
 import { PromptResponse } from '../prompt-response.interface';
 
 export abstract class BasePromptService implements IPromptService {
-  constructor(protected readonly semanticCache: SemanticCacheService) {}
+  constructor(
+    protected readonly api: AxiosInstance,
+    protected readonly semanticCache: SemanticCacheService,
+  ) {}
 
   abstract generateAnswer(body: unknown): Promise<string>;
   abstract createPromptObject(prompt: string): unknown;

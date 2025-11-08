@@ -1,1 +1,1 @@
-export type LlmProvider = 'deepseek';
+export type LlmProvider = 'deepseek' | 'gemini';

@@ -13,7 +13,13 @@ export const createApi = (provider: LlmProvider): AxiosInstance => {
   });
 
   api.interceptors.request.use((request) => {
-    if (token) request.headers.Authorization = `Bearer ${token}`;
+    if (token) {
+      if (provider === 'gemini') {
+        request.headers['x-goog-api-key'] = token;
+      } else {
+        request.headers.Authorization = `Bearer ${token}`;
+      }
+    }
     return request;
   });
 

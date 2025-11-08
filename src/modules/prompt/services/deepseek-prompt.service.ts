@@ -18,7 +18,7 @@ export class DeepSeekPromptService extends BasePromptService {
     return answer;
   }
 
-  createPromptObject(prompt: string): unknown {
+  createPromptObject(prompt: string): DeepSeekRequestBody {
     return {
       model: 'deepseek-chat',
       messages: [

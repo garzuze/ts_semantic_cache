@@ -123,6 +123,6 @@ Server will run on `http://localhost:3000`.
 
 ## TODO
 
-- [ ] Create more prompt services
-- [ ] Add configuration for multiple LLM providers
-- [ ] Add factory pattern 
+- [ ] Create OpenAI prompt service
+- [ ] Create Claude prompt service
+- [X] Add factory pattern 

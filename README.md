@@ -120,7 +120,7 @@ docker compose up -d
 ```
 
 Server will run on `http://localhost:3000`.
-
+> **Note:** You will need to set your environment variables with the API keys from the providers of your choice. `.env.example` provides an example of how to set your .env configuration. The system currently supports OpenAi and Gemini embeddings API + DeepSeek and Gemini as prompt providers.
 ## TODO
 
 - [ ] Create OpenAI prompt service
